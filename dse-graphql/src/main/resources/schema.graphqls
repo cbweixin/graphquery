@@ -1,20 +1,19 @@
 schema {
     query: Query
-    mutation: Mutation
 }
 
 type Query {
-    allLinks: [Link]
+    contactSource(sourceId: ID! sourceType: String!): ContactSource!
 }
 
 
-type Link {
-    url: String!
-    description: String
+type ContactSource {
+    sourceId: ID!
+    sourceType: String!
+    realmId: String!
+    displayName: String!
+    entityType: String!
 }
 
-type Mutation {
-  createLink(url: String!, description: String!): Link
-}
 
 
